@@ -1,5 +1,4 @@
 import json
-import logging
 import schedule
 import time
 import boto3
@@ -7,7 +6,7 @@ import os
 
 from dotenv import load_dotenv
 
-from feedback.GetData import GetData
+from src.feedback.GetData import GetData
 
 ''' Loading Environment files '''
 load_dotenv()
