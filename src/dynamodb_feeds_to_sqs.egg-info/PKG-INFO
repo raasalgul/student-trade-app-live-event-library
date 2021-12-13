@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: dynamodb-feeds-to-sqs
-Version: 0.0.1
+Version: 0.0.7
 Summary: This package is used for event handling with dynamodb and SQS
 Home-page: UNKNOWN
 Author: Sathish Kumar Krisnamoorthy

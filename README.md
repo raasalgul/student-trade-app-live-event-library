@@ -1,5 +1,5 @@
-# Example Package
+# DynamoDB Feed Package
 
-This is a simple example package. You can use
-[Github-flavored Markdown](https://guides.github.com/features/mastering-markdown/)
-to write your content.
+This is a library created for my Master's course assignment 
+to perform a RSS feed to my e-commerse app using dynamodb and
+SQS queue in this package.

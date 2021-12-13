@@ -1,7 +1,10 @@
 import logging
 import time
 
-from src.feedback import Scheduler
+# Use this import for local test
+# import Scheduler
+
+from feedback import Scheduler
 from threading import Thread
 
 class DataFormation:
@@ -40,11 +43,11 @@ class DataFormation:
         t = Thread(target=schedulerResponse.scheduler)
         t.start()
 
-data = DataFormation('us-east-1','test2',[],True,10,'student_trade_app_feed_queue','us-east-1','isTrue')
-
-data.initialization()
-
-data.schedulerStart(3)
-
-time.sleep(30)
-data.schedulerStop()
+# data = DataFormation('us-east-1','test2',[],True,10,'student_trade_app_feed_queue','us-east-1','isTrue')
+#
+# data.initialization()
+#
+# data.schedulerStart(3)
+#
+# time.sleep(30)
+# data.schedulerStop()

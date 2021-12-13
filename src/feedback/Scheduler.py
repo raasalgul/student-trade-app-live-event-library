@@ -6,7 +6,10 @@ import os
 
 from dotenv import load_dotenv
 
-from src.feedback.GetData import GetData
+# Use this import for local test
+import GetData
+
+from feedback import GetData
 
 ''' Loading Environment files '''
 load_dotenv()
@@ -25,11 +28,11 @@ class Scheduler:
         self.columnToCheck = columnToCheck
 
     def schedulerJob(self):
-        sqs_client = boto3.client(os.getenv("AWS_SQS"), region_name=self.queueRegion)
-        getData = GetData(self.tableRegion, self.table, self.columnToCheck)
+        getData = GetData.GetData(self.tableRegion, self.table, self.columnToCheck)
         dbData=getData.scanTable()
         if(len(dbData) >0):
             if(self.isAllColumn):
+                sqs_client = boto3.client(os.getenv("AWS_SQS"), region_name=self.queueRegion)
                 print("Set all Columns")
                 queueResponse = sqs_client.get_queue_url(QueueName=self.queueName)
                 queue_url = queueResponse['QueueUrl']
