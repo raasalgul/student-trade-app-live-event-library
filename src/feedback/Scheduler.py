@@ -7,7 +7,7 @@ import os
 from dotenv import load_dotenv
 
 # Use this import for local test
-import GetData
+# import GetData
 
 from feedback import GetData
 
@@ -32,7 +32,7 @@ class Scheduler:
         dbData=getData.scanTable()
         if(len(dbData) >0):
             if(self.isAllColumn):
-                sqs_client = boto3.client(os.getenv("AWS_SQS"), region_name=self.queueRegion)
+                sqs_client = boto3.client("sqs", region_name=self.queueRegion)
                 print("Set all Columns")
                 queueResponse = sqs_client.get_queue_url(QueueName=self.queueName)
                 queue_url = queueResponse['QueueUrl']

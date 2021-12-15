@@ -16,7 +16,7 @@ class GetData:
         self.columnToCheck = columnToCheck
 
     def scanTable(self):
-        dynamoDbResource = boto3.resource(os.getenv("AWS_DYNAMO"), region_name=self.region)
+        dynamoDbResource = boto3.resource("dynamodb", region_name=self.region)
         tableResource = dynamoDbResource.Table(self.table)
         try:
             allRecords = tableResource.scan()

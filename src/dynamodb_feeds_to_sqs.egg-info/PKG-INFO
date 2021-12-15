@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: dynamodb-feeds-to-sqs
-Version: 0.0.7
+Version: 0.1.1
 Summary: This package is used for event handling with dynamodb and SQS
 Home-page: UNKNOWN
 Author: Sathish Kumar Krisnamoorthy
@@ -19,4 +19,10 @@ License-File: LICENSE.txt
 This is a library created for my Master's course assignment 
 to perform a RSS feed to my e-commerse app using dynamodb and
 SQS queue in this package.
+
+# Commands to create library
+python3 -m build
+twine upload dist/*                                            
+
+
 

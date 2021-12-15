@@ -1,5 +1,5 @@
 import logging
-import GetData
+# import GetData
 
 class DataFormation:
     def __init__(self, columns, data):
